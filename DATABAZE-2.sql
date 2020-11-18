@@ -30,7 +30,7 @@ INSERT INTO employees (name, lastname, age, email)
 VALUES ('Milan','Ngo',16,'thanhhieu.ngo@student.ossp.cz')
 
 INSERT INTO employees (name, lastname, age, email)
-VALUES ('Martin','Kokeš',18,'jan.hladik@student.ossp.cz')
+VALUES ('Jan','Hladik',18,'jan.hladik@student.ossp.cz')
 
 
 UPDATE employees
