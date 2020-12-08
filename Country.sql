@@ -333,9 +333,8 @@ UPDATE countries
 SET deaths_total = 4634
 WHERE id_country = 20;
 SELECT * FROM countries;
+
 SELECT * 
-
-
 FROM countries
 WHERE deaths_total > 4000;
 
