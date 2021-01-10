@@ -230,6 +230,7 @@ VALUES (
   NULL
 );
 
+
 ALTER TABLE countries
 ADD deaths_total int;
 
@@ -334,6 +335,7 @@ SET deaths_total = 4634
 WHERE id_country = 20;
 SELECT * FROM countries;
 
+
 SELECT * 
 FROM countries
 WHERE deaths_total > 4000;
@@ -348,12 +350,30 @@ WHERE deaths_total < 1000;
 
 SELECT *
 FROM countries
+WHERE deaths_total <= 1000 OR deaths_total >= 5000;
+
+SELECT *
+FROM countries
 ORDER BY code ASC;
 
 SELECT *
 FROM countries
 ORDER BY deaths_total DESC;
+
+
+
 SELECT *
 FROM countries
-WHERE deaths_total <= 1000 OR deaths_total >= 5000;
+WHERE name LIKE 'C%';
 
+SELECT *
+FROM countries
+WHERE name LIKE '%a';
+
+SELECT *
+FROM countries
+WHERE name LIKE 'republic' OR name LIKE 'Republic';
+
+SELECT *
+FROM countries
+WHERE name LIKE '%ar%';
