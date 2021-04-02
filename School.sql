@@ -9,7 +9,7 @@ CREATE TABLE students (
  lastname varchar(255) NOT NULL,
  class varchar(10) NOT NULL,
  email varchar(255) NOT NULL,
- PRIMARY KEY (id_country)
+ PRIMARY KEY (id_student)
 );
 
 
@@ -47,19 +47,22 @@ CREATE TABLE teacher (
  lastname varchar(255) NOT NULL,
  description text,
  email varchar(255) NOT NULL,
- PRIMARY KEY (id_country)
+ PRIMARY KEY (id_teacher)
 );
 
 
 
 
-INSERT INTO students (firstname,lastname,description,email) 
+INSERT INTO teacher (firstname,lastname,description,email) 
 VALUES ('Martin','Kokeš','Nevim1','martin.kokes@ossp.cz');
-INSERT INTO students (firstname,lastname,description,email)
+INSERT INTO teacher (firstname,lastname,description,email)
 VALUES ('Daniela','Dalecká','Nevim2','daniela.dalecka@ossp.cz');
-INSERT INTO students (firstname,lastname,description,email)
+INSERT INTO teacher (firstname,lastname,description,email)
 VALUES ('Lenka','Sklenářová','Nevim3','lenka.sklenarova@ossp.cz');
-INSERT INTO students (firstname,lastname,description,email) 
+INSERT INTO teacher (firstname,lastname,description,email) 
 VALUES ('Dana','Kašparová','Nevim4','dana.kasparova@ossp.cz');
-INSERT INTO students (firstname,lastname,description,email) 
+INSERT INTO teacher (firstname,lastname,description,email) 
 VALUES ('Barbora','Kulhánková','Nevim4','barbora.kulhankova@ossp.cz');
+
+ALTER TABLE students
+ADD UNIQUE (email);
