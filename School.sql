@@ -66,3 +66,34 @@ VALUES ('Barbora','Kulhánková','Nevim4','barbora.kulhankova@ossp.cz');
 
 ALTER TABLE students
 ADD UNIQUE (email);
+
+ALTER TABLE classrooms RENAME classroom
+ALTER TABLE students RENAME student
+ALTER TABLE subjects RENAME subject
+ALTER TABLE teachers RENAME teacher
+
+ALTER TABLE classroom
+Change id_classroom id int;
+ALTER TABLE schedule
+Change id_schedule id int;
+ALTER TABLE student
+Change id_student id int;
+ALTER TABLE subject
+Change id_subjects id int;
+ALTER TABLE teacher
+Change id_teacher id int;
+
+alter table schedule drop foreign key id_classrooms ; 
+
+alter table schedule  add constraint classrooms_id foreign key (id_classrooms) REFERENCES classrooms(id);
+
+alter table schedule drop foreign key id_teacher ; 
+
+alter table schedule  add constraint teacher_id foreign key (id_teacher) REFERENCES teacher(id);
+
+alter table schedule drop foreign key id_subject ; 
+
+alter table schedule  add constraint subject_id foreign key (id_subject) REFERENCES subject(id);
+
+
+
