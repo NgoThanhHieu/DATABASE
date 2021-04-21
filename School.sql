@@ -97,3 +97,16 @@ alter table schedule  add constraint subject_id foreign key (id_subject) REFEREN
 
 
 
+ALTER TABLE schedule
+CHANGE id_teacher teacher_id int;
+
+ALTER TABLE schedule 
+CHANGE subject_id subject_id int;
+
+ALTER TABLE schedule
+CHANGE id_classrooms classroom_id int;
+
+SELECT * FROM schedule sch
+JOIN subject su ON sch.subject_id = su.id;
+JOIN classroom cl ON sch.classroom_id = cl.id;
+JOIN teacher te ON sch.teacher_id = te.id;
