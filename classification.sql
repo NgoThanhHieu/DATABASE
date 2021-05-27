@@ -13,6 +13,8 @@ add foreign key (teacher_id)
 REFERENCES teacher_id
 on delete cascade ;
 
+"cizí klíče jsou k tomu aby se mohly propojit database"
+
 INSERT INTO classification (grade, student_id, subjects_id, teacher_id, description, created_at) 
 VALUES
 ('1','1','3','4',"Dobry", now()),
@@ -28,3 +30,13 @@ SELECT * FROM  classification cls
 JOIN teacher te ON cls.teacher_id = te.id
 JOIN student st ON cls.student_id = st.id
 JOIN subject su ON cls.subjects_id = su.id;
+
+ALTER TABLE classification
+ ADD FOREIGN KEY (student_id) REFERENCES student(id) ON DELETE CASCADE;
+ ADD FOREIGN KEY (teacher_id) REFERENCES teacher(id) ON DELETE CASCADE;
+ ADD FOREIGN KEY (subjects_id) REFERENCES subject(id) ON DELETE CASCADE;
+  
+ALTER TABLE schedule
+    ADD FOREIGN KEY (classroom_id) REFERENCES classrooms(id)  ON DELETE CASCADE;
+    ADD FOREIGN KEY (teacher_id) REFERENCES teacher(id)  ON DELETE CASCADE;
+    ADD FOREIGN KEY (subject_id) REFERENCES subject(id)  ON DELETE CASCADE;
