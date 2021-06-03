@@ -40,3 +40,11 @@ ALTER TABLE schedule
     ADD FOREIGN KEY (classroom_id) REFERENCES classrooms(id)  ON DELETE CASCADE;
     ADD FOREIGN KEY (teacher_id) REFERENCES teacher(id)  ON DELETE CASCADE;
     ADD FOREIGN KEY (subject_id) REFERENCES subject(id)  ON DELETE CASCADE;
+
+ALTER TABLE subject
+    ADD FOREIGN KEY (teacher_id) REFERENCES teacher(id) ON DELETE CASCADE;
+
+    ALTER TABLE classification 
+    ADD FOREIGN KEY (teacher_id)
+    REFERENCES teacher(id)
+    ON DELETE CASCADE;
